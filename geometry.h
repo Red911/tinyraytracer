@@ -30,6 +30,8 @@ template <typename T> struct vec<2, T> {
 template <typename T> struct vec<3, T> {
     vec() : x(T()), y(T()), z(T()) {}
     vec(T X, T Y, T Z) : x(X), y(Y), z(Z) {}
+    vec(T A) : x(A), y(A), z(A) {}
+
     T& operator[](const size_t i) { assert(i < 3); return i <= 0 ? x : (1 == i ? y : z); }
     const T& operator[](const size_t i) const { assert(i < 3); return i <= 0 ? x : (1 == i ? y : z); }
     float norm() { return std::sqrt(x * x + y * y + z * z); }
